@@ -1,18 +1,22 @@
 <h1>Books</h1>
 
 <p><strong>title</strong></p>
+  <% @books.each do |book| %>
+    <span><%= book.title %></span>
+  
+  <% end %>
 
 <p><strong>body</strong></p>
+  <% @books.each do |book| %>
+    <span><%= book.body %></span>
 
-<% @books.each do |book| %>
-  <span><%= book.title %></span>
-
-<% end %>  
+  <% end %>  
 
 
 <h2>New book</h2>
 
-<%= form_with model: @book, url: 'books', method: :post do |f| %>
+<%= form_with model:Book do |f| %>
+  
   <h4>title</h4>
   <%= f.text_field :title %>
   
