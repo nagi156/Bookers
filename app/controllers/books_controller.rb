@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     
     book.save
     
-    redirect_to 
+    redirect_to action: :show, id: book.id
   end
   
 
@@ -22,10 +22,13 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:id])
+    
   end
   
   def book_params
     params.require(:book).permit(:title, :body)
   end
+  
   
 end
