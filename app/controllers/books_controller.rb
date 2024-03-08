@@ -1,15 +1,23 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
-
+    @books = Book.all.order(id: :asc)
+    
     @book = Book.new
 
   end
 
   def create
     book = Book.new(book_params)
-    book.save
-    redirect_to action: :show, id: book.id
+
+    if book.save
+      redirect_to action: :show, id: book.id
+
+    else
+       @books =  Book.all.order(id::asc)
+       render :index
+
+    end
+
 
   end
 
