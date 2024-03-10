@@ -75,7 +75,6 @@ div{
   width: 450px;
   border: 2px solid red;
   padding: 7px;
-  padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
 
@@ -98,5 +97,3 @@ a{
 a:visited{
   color: #808080;
 }
-
-
